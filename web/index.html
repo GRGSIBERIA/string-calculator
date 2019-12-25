@@ -59,7 +59,7 @@
                     <td>ヤング率</td>
                     <td>$E$</td>
                     <td><input type="text" id="youngs-modulus" value="0" /></td>
-                    <td>$\text{Pa}$</td>
+                    <td>$\text{MPa}$</td>
                 </tr>
             </table>
             <input type="button" id="calculate-btn" value="計算" />
@@ -71,25 +71,25 @@
                 <tr>
                     <td>線密度</td>
                     <td>$\rho'$</td>
-                    <td><input type="text" id="string-density" value="" disabled/></td>
+                    <td><input type="text" id="string-density" value="0" disabled/></td>
                     <td>$\text{kg}/\text{mm}$</td>
                 </tr>
                 <tr>
                     <td>断面積</td>
                     <td>$A$</td>
-                    <td><input type="text" id="cross-section" value="" disabled/></td>
+                    <td><input type="text" id="cross-section" value="0" disabled/></td>
                     <td>$\text{mm}^2$</td>
                 </tr>
                 <tr>
                     <td>ひずみ</td>
                     <td>$\epsilon$</td>
-                    <td><input type="text" id="strain" value="" disabled/></td>
+                    <td><input type="text" id="strain" value="0" disabled/></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>張力</td>
                     <td>$T$</td>
-                    <td><input type="text" id="tension" value="" disabled/></td>
+                    <td><input type="text" id="tension" value="0" disabled/></td>
                     <td>$\text{N}$</td>
                 </tr>
             </table>
@@ -101,17 +101,20 @@
                 <tr>
                     <td>応力</td>
                     <td>$\sigma$</td>
-                    <td><input type="text" id="stress" value="" disabled/></td>
+                    <td><input type="text" id="stress" value="0" disabled/></td>
+                    <td>$\text{Pa}$</td>
                 </tr>
                 <tr>
                     <td>伸び</td>
                     <td>$\delta$</td>
-                    <td><input type="text" id="stretch" value="" disabled/></td>
+                    <td><input type="text" id="stretch" value="0" disabled/></td>
+                    <td>$\text{mm}$</td>
                 </tr>
                 <tr>
                     <td>張った後の弦長</td>
                     <td>$L_0 + \delta$</td>
-                    <td><input type="text" id="really-length" value="" disabled/></td>
+                    <td><input type="text" id="really-length" value="0" disabled/></td>
+                    <td>$\text{mm}$</td>
                 </tr>
             </table>
         </section>
@@ -120,43 +123,43 @@
             <h2>計算結果テーブル</h2>
             <input type="button" id="add-btn" value="追加" />
             <table border="1">
-                <tr>
+                <tr id="index-tr">
                     <td>番号</td>
                 </tr>
-                <tr>
+                <tr id="length-tr">
                     <td>弦長</td>
                 </tr>
-                <tr>
+                <tr id="diameter-tr">
                     <td>弦直径</td>
                 </tr>
-                <tr>
+                <tr id="frequency-tr">
                     <td>周波数</td>
                 </tr>
-                <tr>
+                <tr id="density-tr">
                     <td>密度</td>
                 </tr>
-                <tr>
+                <tr id="youngs-modulus-tr">
                     <td>ヤング率</td>
                 </tr>
-                <tr>
+                <tr id="string-density-tr">
                     <td>線密度</td>
                 </tr>
-                <tr>
+                <tr id="cross-section-tr">
                     <td>断面積</td>
                 </tr>
-                <tr>
+                <tr id="strain-tr">
                     <td>ひずみ</td>
                 </tr>
-                <tr>
+                <tr id="tension-tr">
                     <td>張力</td>
                 </tr>
-                <tr>
+                <tr id="stress-tr">
                     <td>応力</td>
                 </tr>
-                <tr>
+                <tr id="stretch-tr">
                     <td>伸び</td>
                 </tr>
-                <tr>
+                <tr id="really-length-tr">
                     <td>張った後の弦長</td>
                 </tr>
             </table>
