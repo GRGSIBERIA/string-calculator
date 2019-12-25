@@ -1,14 +1,34 @@
 import 'dart:html';
 
+double getValueOnInput(String idname) {
+  var input = document.querySelector(idname) as InputElement;
+  double value = 0.0;
+  try {
+    value = double.parse(input.value);
+  } catch (exception) {
+    window.alert("不正な値が入力されています：" + idname);
+  }
+  return value;
+}
+
+void writeConsole(String text) {
+  var message = new DivElement()..text = text;
+  document.body.append(message);
+}
+
 void calculate() {
-  var len0 = document.querySelector('#length');
-  print(len0);
+  double len0 = getValueOnInput('#length');
+  double diameter = getValueOnInput('#diameter');
+  double freq = getValueOnInput('#frequency');
+  double density = getValueOnInput('#density');
+  double young = getValueOnInput('#youngs-modulus');
+
+  writeConsole("Computed results.");
 }
 
 void main() {
   var button = document.querySelector("#calculate-btn");
   button..onClick.listen((_) => calculate());
 
-  var message = new DivElement()..text = "Loaded dart scripts.";
-  document.body.append(message);
+  writeConsole("Loaded dart scripts.");
 }
