@@ -52,3 +52,30 @@ void computeString() {
 
   writeConsole("Computed results.");
 }
+
+int index = 1;
+
+void addTd(String idname, num value) {
+  var tdElement = new Element.td()..innerText = value.toString();
+  document.querySelector(idname).append(tdElement);
+}
+
+void addComputeResult() {
+  addTd("#index-tr", index);
+  addTd("#length-tr", getValueOnInput("#length"));
+  addTd("#diameter-tr", getValueOnInput("#diameter"));
+  addTd("#frequency-tr", getValueOnInput("#frequency"));
+  addTd("#density-tr", getValueOnInput("#density"));
+  addTd("#youngs-modulus-tr", getValueOnInput("#youngs-modulus"));
+  addTd("#string-density-tr", getValueOnInput("#string-density"));
+  addTd("#cross-section-tr", getValueOnInput("#cross-section"));
+  addTd("#strain-tr", getValueOnInput("#strain"));
+  addTd("#tension-tr", getValueOnInput("#tension"));
+  addTd("#stress-tr", getValueOnInput("#stress"));
+  addTd("#stretch-tr", getValueOnInput("#stretch"));
+  addTd("#really-length-tr", getValueOnInput("#really-length"));
+
+  writeConsole("Saved results of inputs to a table.");
+
+  ++index;
+}
