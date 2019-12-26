@@ -134,6 +134,8 @@
         </section>
         <hr/>
         <section>
+            <!-- 縦書きに記録しているのはtableの構造上，順番に追記しなければならない
+                 潜在的に順番に記録しないというバグがあるためtr.appendだけで通るようにした -->
             <h2>計算結果テーブル</h2>
             <input type="button" id="add-btn" value="保存" />
             <table border="1">
