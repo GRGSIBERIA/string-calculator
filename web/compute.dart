@@ -1,6 +1,15 @@
 import 'dart:html';
 import 'dart:math';
 
+// 列番号を一応記録しておく
+int index = 1;
+
+// 材料定数マップ，比重，ヤング率の順番で格納
+const Map<String, List<double>> materials = {
+  "SUS430": [7.70e-9, 2.00e5],
+  "C2600" : [8.53e-9, 1.10e5],
+  "S45C"  : [7.80e-9, 2.05e5]
+};
 
 double getValueOnInput(String idname) {
   var input = document.querySelector(idname) as InputElement;
@@ -53,9 +62,6 @@ void computeString() {
   writeConsole("Computed results.");
 }
 
-// 列番号を一応記録しておく
-int index = 1;
-
 void addTd(String idname, num value) {
   var tdElement = new Element.td()..innerText = value.toString();
   document.querySelector(idname).append(tdElement);
@@ -80,4 +86,15 @@ void addComputeResult() {
   writeConsole("Saved results of inputs to a table.");
 
   ++index;
+}
+
+void applyMaterial() {
+  final String selectedItem = (document.querySelector("#material-selector") as SelectElement).value;
+  final double density = materials[selectedItem][0];
+  final double youngsModulus = materials[selectedItem][1];
+
+  recordValueOnInput(density, "#density");
+  recordValueOnInput(youngsModulus, "#youngs-modulus");
+
+  writeConsole("Applyed constants of a material: " + selectedItem);
 }
