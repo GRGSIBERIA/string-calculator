@@ -53,6 +53,7 @@ void computeString() {
   writeConsole("Computed results.");
 }
 
+// 列番号を一応記録しておく
 int index = 1;
 
 void addTd(String idname, num value) {
@@ -61,6 +62,7 @@ void addTd(String idname, num value) {
 }
 
 void addComputeResult() {
+  // id名を変えたときに影響を少なくするため分けて書いた
   addTd("#index-tr", index);
   addTd("#length-tr", getValueOnInput("#length"));
   addTd("#diameter-tr", getValueOnInput("#diameter"));
