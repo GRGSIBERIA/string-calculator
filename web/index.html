@@ -50,6 +50,20 @@
                     <td>$\text{Hz}$</td>
                 </tr>
                 <tr>
+                    <td>材料定数</td>
+                    <td></td>
+                    <td>
+                        <select id="material-selector">
+                            <option value="C2600">ニッケル C2600</option>
+                            <option value="SUS430">ステンレス SUS430</option>
+                            <option value="S45C" selected>鉄 S45C</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="button" id="material-btn" value="適用" />
+                    </td>
+                </tr>
+                <tr>
                     <td>密度</td>
                     <td>$\rho$</td>
                     <td><input type="text" id="density" value="0" /></td>
@@ -120,8 +134,10 @@
         </section>
         <hr/>
         <section>
+            <!-- 縦書きに記録しているのはtableの構造上，順番に追記しなければならない
+                 潜在的に順番に記録しないというバグがあるためtr.appendだけで通るようにした -->
             <h2>計算結果テーブル</h2>
-            <input type="button" id="add-btn" value="追加" />
+            <input type="button" id="add-btn" value="保存" />
             <table border="1">
                 <tr id="index-tr">
                     <td>番号</td>
@@ -163,7 +179,11 @@
                     <td>張った後の弦長</td>
                 </tr>
             </table>
+            <div>
+                エクセルにテーブルの内容をコピー＆ペーストできます
+            </div>
         </section>
+        <hr/>
         <section>
             <h2>コンソール</h2>
         </section>
