@@ -12,7 +12,7 @@ const Map<String, List<double>> materials = {
 };
 
 double getValueOnInput(String idname) {
-  var input = document.querySelector(idname) as InputElement;
+  InputElement input = document.querySelector(idname) as InputElement;
   double value = 0.0;
   try {
     value = double.parse(input.value);
