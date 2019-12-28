@@ -24,6 +24,12 @@
 
         <!-- Loading Script -->
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+        <!-- 局所的にクラスを指定したい-->
+        <style type="text/css">
+            div.mathnum {text-align: right;}
+        </style>
+
     </head>
     <body>
         <script defer src="index.dart.js"></script>
@@ -184,6 +190,32 @@
             </div>
         </section>
         <hr/>
+        <section>
+            <h2>解説</h2>
+            <p>両端固定の弦の固有振動数は以下の式で表される．</p>
+            [[f = \frac{1}{2L_0}\sqrt{\frac{T}{\rho A}}]] <div class="mathnum">(1)</div>
+            <p>ここで単位面積当たりの応力は，</p>
+            [[\sigma = \frac{T}{A}]] <div class="mathnum">(2)</div class="mathnum">
+            <p>である．(1)に(2)を代入すると，</p>
+            [[f = \frac{1}{2L_0}\sqrt{\frac{\sigma}{\rho}}]] <div class="mathnum">(3)</div class="mathnum">
+            <p>応力を求めるには，(3)を変形し</p>
+            [[\sigma = 4 L^2_0 f^2 \rho]] <div class="mathnum">(4)</div class="mathnum">
+            <p>である．</p>
+            <p>
+                弦を張る前の弦長から，張った後の弦長を求めるには，伸び$\delta$を求める．
+                伸び$\delta$は元の弦長からのひずみ$\epsilon$で求まる．
+            </p>
+            [[\delta = L_0 \epsilon]] <div class="mathnum">(5)</div class="mathnum">
+            <p>
+                ひずみと応力はフックの法則によって比例するため，次式が成立する．
+            </p>
+            [[\sigma = E \epsilon]] <div class="mathnum">(6)</div class="mathnum">
+            <p>
+                $E$はヤング率もしくは縦弾性係数とも呼ばれる．
+                (5)に$\epsilon$を代入すると，
+            </p>
+            [[\delta = \frac{L_0 \sigma}{E}]] <div class="mathnum">(7)</div class="mathnum">
+        </section>
         <section>
             <h2>コンソール</h2>
         </section>
