@@ -1,5 +1,6 @@
 import 'dart:html';
 import 'dart:math';
+import '../util.dart';
 
 // 列番号を一応記録しておく
 int index = 1;
@@ -10,31 +11,6 @@ const Map<String, List<double>> materials = {
   "C2600" : [8.53e-9, 1.10e5],
   "S45C"  : [7.80e-9, 2.05e5]
 };
-
-double getValueOnInput(String idname) {
-  InputElement input = document.querySelector(idname) as InputElement;
-  double value = 0.0;
-  try {
-    value = double.parse(input.value);
-  } catch (exception) {
-    window.alert("不正な値が入力されています：" + idname);
-  }
-  return value;
-}
-
-void recordValueOnInput(double value, String idname) {
-  InputElement input = document.querySelector(idname) as InputElement;
-  try {
-    input.value = value.toString();
-  } catch (exception) {
-    window.alert("計算できませんでした：" + idname);
-  }
-}
-
-void writeConsole(String text) {
-  var message = new DivElement()..text = text;
-  document.body.append(message);
-}
 
 void computeString() {
   final double len0 = getValueOnInput('#length');
