@@ -16,4 +16,6 @@ void computeRayleigh() {
 
   recordValueOnInput(b, "#beta");
   recordValueOnInput(a, "#alpha");
+  recordValueOnInput(o1, "#lowangular");
+  recordValueOnInput(o2, "#highangular");
 }
